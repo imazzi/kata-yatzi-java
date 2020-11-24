@@ -6,6 +6,16 @@ import static org.junit.Assert.*;
 
 public class YatzyTest {
 
+
+   @Test(expected = IllegalArgumentException.class)
+   public void test() {
+      new DiceHand(-1, 1, 1, 1, 1);
+   }
+   @Test(expected = IllegalArgumentException.class)
+   public void test2() {
+      new DiceHand(1, 1, 11, 1, 1);
+   }
+
    @Test
    public void chance_scores_sum_of_all_dice() {
       assertEquals(15, Yatzy.chance(new DiceHand(2, 3, 4, 5, 1)));
@@ -77,30 +87,33 @@ public class YatzyTest {
 
    @Test
    public void three_of_a_kind() {
-      assertEquals(9, Yatzy.three_of_a_kind(3, 3, 3, 4, 5));
-      assertEquals(15, Yatzy.three_of_a_kind(5, 3, 5, 4, 5));
-      assertEquals(9, Yatzy.three_of_a_kind(3, 3, 3, 3, 5));
+      assertEquals(9, Yatzy.three_of_a_kind(new DiceHand(3, 3, 3, 4, 5)));
+      assertEquals(15, Yatzy.three_of_a_kind(new DiceHand(5, 3, 5, 4, 5)));
+      assertEquals(9, Yatzy.three_of_a_kind(new DiceHand(3, 3, 3, 3, 5)));
+      assertEquals(9, Yatzy.three_of_a_kind(new DiceHand(3, 3, 3, 3, 3)));
+      assertEquals(0, Yatzy.three_of_a_kind(new DiceHand(3, 3, 2, 2, 1)));
    }
 
    @Test
    public void four_of_a_knd() {
-      assertEquals(12, Yatzy.four_of_a_kind(3, 3, 3, 3, 5));
-      assertEquals(20, Yatzy.four_of_a_kind(5, 5, 5, 4, 5));
-      assertEquals(9, Yatzy.three_of_a_kind(3, 3, 3, 3, 3));
+      assertEquals(12, Yatzy.four_of_a_kind(new DiceHand(3, 3, 3, 3, 5)));
+      assertEquals(20, Yatzy.four_of_a_kind(new DiceHand(5, 5, 5, 4, 5)));
+      assertEquals(8, Yatzy.four_of_a_kind(new DiceHand(2, 2, 2, 2, 2)));
+      assertEquals(0, Yatzy.four_of_a_kind(new DiceHand(2, 2, 2, 3, 3)));
    }
 
    @Test
    public void smallStraight() {
-      assertEquals(15, Yatzy.smallStraight(1, 2, 3, 4, 5));
-      assertEquals(15, Yatzy.smallStraight(2, 3, 4, 5, 1));
-      assertEquals(0, Yatzy.smallStraight(1, 2, 2, 4, 5));
+      assertEquals(15, Yatzy.smallStraight(new DiceHand(1, 2, 3, 4, 5)));
+      assertEquals(15, Yatzy.smallStraight(new DiceHand(2, 3, 4, 5, 1)));
+      assertEquals(0, Yatzy.smallStraight(new DiceHand(1, 2, 2, 4, 5)));
    }
 
    @Test
    public void largeStraight() {
-      assertEquals(20, Yatzy.largeStraight(6, 2, 3, 4, 5));
-      assertEquals(20, Yatzy.largeStraight(2, 3, 4, 5, 6));
-      assertEquals(0, Yatzy.largeStraight(1, 2, 2, 4, 5));
+      assertEquals(20, Yatzy.largeStraight(new DiceHand(6, 2, 3, 4, 5)));
+      assertEquals(20, Yatzy.largeStraight(new DiceHand(2, 3, 4, 5, 6)));
+      assertEquals(0, Yatzy.largeStraight(new DiceHand(1, 2, 2, 4, 5)));
    }
 
    @Test
