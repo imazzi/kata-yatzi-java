@@ -115,7 +115,6 @@ private static final Logger log = LoggerFactory.getLogger(Yatzy.class);
       if (diceTwoOrMore.size() != 2) {
          return 0;
       }
-
       return diceTwoOrMore.stream().mapToInt(Integer::intValue).sum() * 2;
 
    }
