@@ -1,7 +1,7 @@
 # kata-yatzi-java
-<h4>Yatzy</h4> <p>is a dice game similar to Yacht and Yahtzee. It is related to the Latin American game Generala and the English game of poker dice. Yatzy is most popular in the Scandinavian countries and Finland.
+<h2>Yatzy</h2> <p>is a dice game similar to Yacht and Yahtzee. It is related to the Latin American game Generala and the English game of poker dice. Yatzy is most popular in the Scandinavian countries and Finland.
  
-<h4>Scoring</h4>
+<h2>Scoring</h2>
 
 The following combinations earn points:
 
@@ -21,7 +21,7 @@ Upper Section:
 </li>
  
 </ul>
-If a player manages to score at least 63 points (an average of three of each number) in the upper section, they are awarded a bonus of 50 points.
+If a player manages to score at least 63 points (an average of three of each number) in the upper section, they are awarded a bonus of 50 points.<br>
 
 Lower Section:
 
