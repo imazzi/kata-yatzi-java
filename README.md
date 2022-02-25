@@ -6,13 +6,21 @@
 The following combinations earn points:
 
 Upper Section:
-
-Ones: The sum of all dice showing the number 1.
-Twos: The sum of all dice showing the number 2.
-Threes: The sum of all dice showing the number 3.
-Fours: The sum of all dice showing the number 4.
-Fives: The sum of all dice showing the number 5.
-Sixes: The sum of all dice showing the number 6.
+<ul>
+ <li>Ones: The sum of all dice showing the number 1.
+</li>
+  <li>Twos: The sum of all dice showing the number 2.
+</li>
+ <li>Threes: The sum of all dice showing the number 3.
+</li>
+ <li>Fours: The sum of all dice showing the number 4.
+</li>
+ <li>Fives: The sum of all dice showing the number 5.
+</li>
+ <li>Sixes: The sum of all dice showing the number 6.
+</li>
+ 
+</ul>
 If a player manages to score at least 63 points (an average of three of each number) in the upper section, they are awarded a bonus of 50 points.
 
 Lower Section:
